@@ -1,0 +1,56 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+  <label> Image :
+    <select name="image" id="image" formControlName="src"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      <option value="">Sélectionner une image</option>
+      @for (image of pics; track $index) {
+      <option value="{{ image }}">{{ image }}</option>
+      }
+    </select>
+  </label>
+  <label> Description alternative de l'image :
+    <input [class.invalid]="isInvalid('alt')" type="text" formControlName="alt"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    @if (hasError('alt', 'required')){
+    <p>
+      Description alternative de l'image requise.
+    </p>
+    }
+  </label>
+  <label> Titre de l'article :
+    <input [class.invalid]="isInvalid('titre')" type="text" formControlName="titre"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    @if(hasError('titre', 'required')){
+    <p>
+      Titre de l'article requis.
+    </p>
+    }
+  </label>
+  <label> Description de l'article :
+    <input [class.invalid]="isInvalid('description')" type="text" formControlName="description"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    @if(hasError('description', 'required')){
+    <p>
+      Description de l'article requise.
+    </p>
+    }
+  </label>
+  <label> Lien(s) :
+    <input [class.invalid]="isInvalid('lien')" type="text" formControlName="lien"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    @if(hasError('lien', 'required')){
+    <p>
+      Lien(s) requis.
+    </p>
+    }
+  </label>
+
+  <ul class="actions">
+    <li><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        type="submit">Modifier</button></li>
+    <li><button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="reset">Reset</button>
+    </li>
+
+  </ul>
+
+</form>

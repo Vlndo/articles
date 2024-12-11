@@ -1,0 +1,16 @@
+<article
+  class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-fit">
+  <img class="w-80" [src]="'assets/images/' + article.src" alt="" />
+  <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ article.titre }}</h3>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ article.description }}</p>
+  <ul class="flex ">
+    <li class="flex px-2">
+      <a routerLink="/editor/{{article.id}}"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 my-2 px-4 rounded">Edit</a>
+    </li>
+
+    <li class="flex px-2"><button type="button" (click)="delete()"
+        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 my-2 px-4 rounded">Delete</button>
+    </li>
+  </ul>
+</article>

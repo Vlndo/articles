@@ -1,0 +1,20 @@
+<form (submit)="onSubmit(form)" #form>
+  <label> Email :
+    <input [class]="{'invalid' : !mail.checkValidity()}" type="email" name="email" [(ngModel)]="credentials.email"
+      required #mail
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    @if (!mail.checkValidity()){
+    <p>Email invalide</p>
+    }
+  </label>
+  <label> Password :
+    <input [class.invalid]="!password.checkValidity()" type="password" name="password"
+      [(ngModel)]="credentials.password" required minlength="6" #password
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    @if (!password.checkValidity()){
+    <p>Mot de passe invalide</p>
+    }
+  </label>
+  <input [disabled]="!form.checkValidity()" type="submit" value="Se Connecter"
+    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</form>

@@ -1,0 +1,36 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "src": "pic07.jpg",
+      "alt": "zfzefzef",
+      "titre": "zefzef",
+      "description": "Description Resetzefzefze",
+      "lien": "zefzefz"
+    },
+    {
+      "id": 2,
+      "src": "pic04.jpg",
+      "alt": "zefzefze",
+      "titre": "fzefzef",
+      "description": "Description Resetezfzef",
+      "lien": "zefzef"
+    },
+    {
+      "id": 3,
+      "src": "pic08.jpg",
+      "alt": "zefzef",
+      "titre": "fzefzef",
+      "description": "Description Resetzefzef",
+      "lien": "zefzef"
+    }
+  ],
+  "users": [
+    {
+      "email": "epiels@dawan.fr",
+      "password": "$2a$10$g90owb2SIxFlRyTmLDMDU.3fhpDJ3YY3o1hMxmg484IHpT5xOSCXW",
+      "id": 1,
+      "username": "Ernaud"
+    }
+  ]
+}
